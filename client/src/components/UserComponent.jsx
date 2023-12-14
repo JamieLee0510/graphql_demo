@@ -1,6 +1,8 @@
 import React from "react";
 import { useQuery, gql } from "@apollo/client";
 
+import AddressComponent from "./AdressComponet";
+
 const GET_USER = gql`
     query GetUser($id: String!) {
         user(id: $id) {
@@ -30,7 +32,7 @@ function UserComponent() {
             <ul>
                 <li> {data.user.name}</li>
                 <li> {data.user.email}</li>
-                <li> {data.user.address.city}</li>
+                <AddressComponent />
             </ul>
         </div>
     );
